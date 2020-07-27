@@ -1,5 +1,13 @@
 GOOGLE_API_KEY = 'Your-API-KEY' 
 
+############################################################
+# function extract_lat_long_via_address
+# parameter : insert string address or zipcode
+# return : 3 strings
+#   - lat : latitude
+#   - lng : longitude
+#   - name : Standard address used by Google Map
+############################################################
 def extract_lat_long_via_address(address_or_zipcode):
     lat, lng, name = None, None, None
     api_key = GOOGLE_API_KEY
@@ -18,6 +26,7 @@ def extract_lat_long_via_address(address_or_zipcode):
     except:
         pass
     return lat, lng, name
+############################################################
 
 str = 'Seoul'
 print(extract_lat_long_via_address(str))
