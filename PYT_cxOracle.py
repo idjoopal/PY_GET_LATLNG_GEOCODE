@@ -5,6 +5,7 @@ import os
 import datetime
 from dateutil.relativedelta import *
 import calendar
+
 ######################################################
 # variables
 host = 'db-ip-address'
@@ -18,8 +19,12 @@ def df_to_lst(DF):
     DF = pd.DataFrame(DF)
     return DF.values.tolist()
 ######################################################
+
 # oracle encoding problem "hangeul(korean)"
+# if utf-8, use ".AL32UTF8"
+# if CP949, use ".KO16MSWIN949"
 os.environ["NLS_LANG"] = ".AL32UTF8"
+
 
 # cx_Oracle connect
 dsn = cx_Oracle.makedsn(host, port, sid)
