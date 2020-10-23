@@ -1,10 +1,5 @@
 import pandas as pd
-import numpy as np
 import cx_Oracle
-import os
-import datetime
-from dateutil.relativedelta import *
-import calendar
 
 ######################################################
 # variables
